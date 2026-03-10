@@ -1,113 +1,267 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOUS Winner</title>
+  <meta name="robots" content="noindex,nofollow">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<title>NOUS</title>
+  <style>
+    *{
+      box-sizing:border-box;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    html,body{
+      margin:0;
+      padding:0;
+      min-height:100%;
+    }
 
-<style>
+    body{
+      background-image:url('/winner-bg.jpg');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-attachment:scroll;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:'Inter',sans-serif;
+      color:white;
+      text-align:center;
+      padding:20px;
+      position:relative;
+      min-height:100vh;
+      overflow-x:hidden;
+      overflow-y:auto;
+    }
 
-*{
-box-sizing:border-box;
-}
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.42);
+      z-index:0;
+    }
 
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-color:white;
-background:#0b0b0b;
-display:flex;
-align-items:center;
-justify-content:center;
-min-height:100vh;
-text-align:center;
-padding:25px;
-}
+    .container{
+      position:relative;
+      z-index:2;
+      width:100%;
+      max-width:760px;
+      padding:40px 30px;
+      background:rgba(0,0,0,0.28);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      border-radius:22px;
+      line-height:1.8;
+      animation:fadeUp 1.2s ease forwards;
+      opacity:0;
+      transform:translateY(18px);
+    }
 
-.container{
-max-width:650px;
-}
+    h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:72px;
+      letter-spacing:14px;
+      margin:0 0 18px 0;
+      font-weight:600;
+      animation:softReveal 1.4s ease forwards;
+      opacity:0;
+    }
 
-h1{
-font-family:'Cormorant Garamond',serif;
-font-size:70px;
-letter-spacing:12px;
-margin-bottom:30px;
-}
+    .topline{
+      font-family:'Cormorant Garamond',serif;
+      font-size:34px;
+      margin-bottom:14px;
+      animation:softReveal 1.6s ease forwards;
+      opacity:0;
+    }
 
-.win{
-font-size:26px;
-margin-bottom:20px;
-}
+    p{
+      font-size:18px;
+      color:rgba(255,255,255,0.94);
+      margin:0 0 18px 0;
+      animation:softReveal 1.8s ease forwards;
+      opacity:0;
+    }
 
-p{
-font-size:18px;
-line-height:1.7;
-margin-bottom:18px;
-}
+    .brand{
+      margin-top:18px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:26px;
+      letter-spacing:2px;
+      animation:softReveal 2s ease forwards;
+      opacity:0;
+    }
 
-.code{
-margin-top:30px;
-font-size:22px;
-letter-spacing:4px;
-padding:12px 20px;
-border:1px solid white;
-display:inline-block;
-}
+    .code-label{
+      margin-top:28px;
+      font-size:15px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      opacity:0.9;
+      animation:softReveal 2.2s ease forwards;
+      opacity:0;
+    }
 
-@media(max-width:768px){
+    .code{
+      margin-top:12px;
+      display:inline-block;
+      padding:14px 22px;
+      border:1px solid rgba(255,255,255,0.8);
+      border-radius:999px;
+      font-size:28px;
+      font-weight:600;
+      letter-spacing:4px;
+      animation:softReveal 2.4s ease forwards;
+      opacity:0;
+    }
 
-h1{
-font-size:42px;
-letter-spacing:6px;
-}
+    .links{
+      margin-top:30px;
+      font-size:16px;
+      animation:softReveal 2.6s ease forwards;
+      opacity:0;
+    }
 
-.win{
-font-size:22px;
-}
+    .links a{
+      color:white;
+      text-decoration:none;
+    }
 
-p{
-font-size:16px;
-}
+    .links a:hover{
+      opacity:0.8;
+    }
 
-}
+    .insta{
+      margin-top:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
-</style>
+    .insta img{
+      width:26px;
+      height:26px;
+      object-fit:contain;
+    }
 
+    @keyframes fadeUp{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes softReveal{
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media (max-width:768px){
+      body{
+        padding:14px;
+      }
+
+      .container{
+        padding:26px 18px;
+        border-radius:16px;
+      }
+
+      h1{
+        font-size:46px;
+        letter-spacing:8px;
+        margin-bottom:12px;
+      }
+
+      .topline{
+        font-size:24px;
+      }
+
+      p{
+        font-size:16px;
+      }
+
+      .brand{
+        font-size:22px;
+      }
+
+      .code{
+        font-size:22px;
+        letter-spacing:2px;
+        padding:12px 18px;
+      }
+
+      .links{
+        font-size:15px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <div class="container">
+    <h1>NOUS</h1>
 
-<h1>NOUS</h1>
+    <div class="topline">
+      Maintenant, toi aussi, tu es NOUS.
+    </div>
 
-<div class="win">
-Félicitations.
-</div>
+    <p>
+      Tu as trouvé l’un des rares codes gagnants.
+    </p>
 
-<p>
-Tu viens de trouver l’un des codes gagnants.
-</p>
+    <p>
+      Beaucoup ont scanné.<br>
+      Peu ont trouvé.
+    </p>
 
-<p>
-Contacte-nous sur Instagram avec ce code
-pour recevoir ta récompense.
-</p>
+    <p>
+      Aujourd’hui, c’est toi.
+    </p>
 
-<div class="code">
-NOUS-47291
-</div>
+    <p>
+      En portant NOUS, tu n’as pas seulement découvert un code.<br>
+      Tu fais désormais partie de l’histoire.
+    </p>
 
-<p style="margin-top:30px;">
-Instagram : @nous.maroc
-</p>
+    <div class="brand">
+      Welcome to NOUS
+    </div>
 
-</div>
+    <div class="code-label">
+      Code gagnant
+    </div>
+
+    <div class="code">
+      NOUS-47291
+    </div>
+
+    <div class="links">
+      <a href="https://nous.ma" target="_blank">nous.ma</a>
+
+      <div class="insta">
+        <a href="https://instagram.com/nous.maroc" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+
+        <a href="https://instagram.com/nous.maroc" target="_blank">
+          @nous.maroc
+        </a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
