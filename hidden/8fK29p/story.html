@@ -23,22 +23,20 @@ height:100%;
 }
 
 body{
-
 background-image:url('/nous-bg.jpg');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 background-attachment:fixed;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 font-family:'Inter',sans-serif;
 color:white;
 text-align:center;
 padding:20px;
 position:relative;
+overflow:hidden;
 }
 
 body::before{
@@ -46,86 +44,116 @@ content:"";
 position:absolute;
 inset:0;
 background:rgba(0,0,0,0.45);
+z-index:0;
 }
 
 .container{
-
 position:relative;
 z-index:2;
-
 max-width:720px;
 padding:40px 30px;
-
 background:rgba(0,0,0,0.35);
 backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
 border-radius:20px;
-
 line-height:1.8;
+animation:fadeUp 1.2s ease forwards;
+opacity:0;
+transform:translateY(18px);
 }
 
 h1{
-
 font-family:'Cormorant Garamond',serif;
 font-size:70px;
 letter-spacing:14px;
-margin-bottom:35px;
+margin:0 0 35px 0;
 font-weight:600;
-
+animation:softReveal 1.6s ease forwards;
+opacity:0;
 }
 
 p{
-
 font-size:18px;
-margin-bottom:18px;
+margin:0 0 18px 0;
 color:rgba(255,255,255,0.92);
-
+animation:softReveal 1.8s ease forwards;
+opacity:0;
 }
 
 .brand{
-
 font-family:'Cormorant Garamond',serif;
 font-size:28px;
 margin-top:30px;
 letter-spacing:3px;
-
+animation:softReveal 2s ease forwards;
+opacity:0;
 }
 
 .links{
-
 margin-top:35px;
 font-size:16px;
-
+animation:softReveal 2.2s ease forwards;
+opacity:0;
 }
 
 .links a{
-
 color:white;
 text-decoration:none;
+}
 
+.links a:hover{
+opacity:0.8;
 }
 
 .insta{
-
 margin-top:15px;
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
-
+flex-wrap:wrap;
 }
 
 .insta img{
-
 width:26px;
 height:26px;
+object-fit:contain;
+}
 
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes softReveal{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @media (max-width:768px){
 
+body{
+padding:14px;
+background-attachment:scroll;
+}
+
+.container{
+padding:26px 18px;
+border-radius:16px;
+}
+
 h1{
 font-size:44px;
 letter-spacing:8px;
+margin-bottom:24px;
 }
 
 p{
@@ -134,6 +162,10 @@ font-size:16px;
 
 .brand{
 font-size:22px;
+}
+
+.links{
+font-size:15px;
 }
 
 }
@@ -190,9 +222,7 @@ nous.ma
 <div class="insta">
 
 <a href="https://instagram.com/nous.maroc" target="_blank">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
 </a>
 
 <a href="https://instagram.com/nous.maroc" target="_blank">
